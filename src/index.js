@@ -5,6 +5,11 @@ const onClickAdd = () => {
   const inputText = document.getElementById("add-text").value;
   document.getElementById("add-text").value = "";
 
+  createIncompleteList(inputText);
+};
+
+// 未完了リストに追加する関数
+const createIncompleteList = (text) => {
   // liタグの生成
   const li = document.createElement("li");
 
@@ -15,7 +20,7 @@ const onClickAdd = () => {
   // divタグ(item)生成
   const div2 = document.createElement("div");
   div2.className = "item";
-  div2.innerText = inputText;
+  div2.innerText = text;
 
   // button(完了)タグ生成
   const completeButton = document.createElement("button");
